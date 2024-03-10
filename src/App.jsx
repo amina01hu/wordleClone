@@ -1,15 +1,19 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import './App.css';
-import TitlePage from './components/TitlePage';
+import { TitlePage, GamePage, LoginPage } from "./pages"; 
 
 function App() {
 
   return (
-    <section>
-      <TitlePage  />
-    </section>
+    <main>
+    <Router>
+      <Routes>
+        <Route path="/" element={<TitlePage/>} />
+        <Route path="/gamestart" element={<GamePage/>} />
+        <Route path="/login" element={<LoginPage/>} />
+      </Routes>
+    </Router>
+    </main>
   )
 }
 
